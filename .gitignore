@@ -3,3 +3,4 @@ node_modules/
 public/*
 public/archives/2018/index.html
 .DS_Store
+db.json
