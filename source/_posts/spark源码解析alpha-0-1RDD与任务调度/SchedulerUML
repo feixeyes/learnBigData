@@ -1,0 +1,44 @@
+@startuml
+Scheduler <|-- LocalScheduler
+
+Scheduler <|-- MesosScheduler
+NScheduler <|-- MesosScheduler
+
+
+Interface Scheduler {
+  def start()
+  def waitForRegister()
+  def runTasks[T](tasks: Array[Task[T]]): Array[T]
+  def stop()
+  def numCores(): Int
+}
+
+
+class LocalScheduler {
+  threads: Int
+  threadPool: ExecutorService
+
+  override def start()
+  override def waitForRegister()
+  override def runTasks[T](tasks: Array[Task[T]]): Array[T]
+  override def stop()
+  override def numCores(): Int
+}
+
+
+class MesosScheduler {
+  master: String
+  frameworkName: String
+  execArg: Array[Byte]
+
+  override def start()
+  override def waitForRegister()
+  override def runTasks[T](tasks: Array[Task[T]]): Array[T]
+  override def stop()
+  override def numCores(): Int
+}
+
+
+
+
+@enduml

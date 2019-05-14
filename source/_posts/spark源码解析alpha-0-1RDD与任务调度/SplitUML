@@ -1,0 +1,31 @@
+@startuml
+
+Split<|--HdfsSplit
+Split<|--ParallelArraySplit
+Split <|-- UnionSplit
+UnionSplit <|-- UnionSplitImpl
+
+class HdfsSplit {
+ s : InputSplit
+}
+
+class ParallelArraySplit {
+	arrayId: Long
+	slice: Int
+	values: Seq[T]
+}
+
+class UnionSplit {
+	  def iterator(): Iterator[T] 
+	  def preferredLocations(): Seq[String]
+}
+
+
+class UnionSplitImpl {
+	  override def iterator(): Iterator[T] 
+	  override def preferredLocations(): Seq[String]
+}
+
+@enduml
+
+class CartesianSplit(val s1: Split, val s2: Split) extends Split

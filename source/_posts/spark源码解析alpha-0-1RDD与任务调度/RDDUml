@@ -1,0 +1,68 @@
+@startuml
+
+
+RDD <|-- HdfsTextFile
+RDD <|-- ParallelArray
+RDD <|-- MappedRDD
+RDD <|-- FilteredRDD
+
+class RDD {
+	sc: SparkContext
+
+	def splits(): Array[Split]
+  	def iterator(split: Split): Iterator[T]
+  	def preferredLocations(split: Split): Seq[String]
+
+  	def map(f: T => U) 
+  	def filter(f: T => Boolean) 
+  	def aggregateSplit() 
+  	def cache() 
+
+  	def collect()
+  	def toArray()
+  	def reduce(f: (T, T) => T)
+
+}
+
+class HdfsTextFile{
+	sc: SparkContext
+	path: String
+
+	override def splits()
+	override def iterator(split_in: Split) 
+	override def preferredLocations(split: Split) 
+}
+
+class MappedRDD {
+	prev: RDD[T]
+	f: T => U
+
+	override def splits()
+	override def preferredLocations(split: Split) 
+	override def iterator(split: Split) 
+	override def taskStarted(split: Split, slot: SlaveOffer) 
+}
+
+class FilteredRDD {
+	prev: RDD[T]
+	f: T => U
+
+	override def splits()
+	override def preferredLocations(split: Split) 
+	override def iterator(split: Split) 
+	override def taskStarted(split: Split, slot: SlaveOffer) 
+}
+
+class ParallelArray {
+	sc: SparkContext
+	data: Seq[T]
+	numSlices: Int
+
+	override def splits()
+	override def iterator(split_in: Split) 
+	override def preferredLocations(split: Split) 
+}
+
+
+
+@enduml
