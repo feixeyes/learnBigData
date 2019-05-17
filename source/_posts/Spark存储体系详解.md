@@ -48,8 +48,7 @@ Spark 提供了Broadcast功能可以将小的数据集同步到多个节点上�
 
 * BlockManagerId：Blockmanager的唯一标识。
 
-* **BlockMangerMasterEndpoint**：维护集群中所有的BlockManager及其维护的Block。
-
+* **BlockMangerMasterEndpoint**：维护集群中所有的BlockManager及其维护的Block
 * BlockManagerMaster：各BlockManager与 BlockMangerMasterEndpoint 通信的代理（RPC客户端）。
 
 * **MapOutTracher**：用于找到某Reduce对应的上游Block所在的位置。
@@ -76,7 +75,25 @@ Spark 提供了Broadcast功能可以将小的数据集同步到多个节点上�
 
 
 
+下面有两张图，比便于对Spark存储体系的整体认识，从网上直接粘过来的，把原文链接放在了参考资料里。
 
+
+
+这张图跟《Spark内核设计的艺术》的一样，姑且作为出处：
+
+{% asset_img spark-storage-system.png %}
+
+
+
+这张图见参考资料：
+
+{% asset_img spark-store.png %}
+
+
+
+参考资料：
+
+ [Spark存储体系](https://www.cnblogs.com/cenglinjinran/p/8476199.html)
 
 
 
