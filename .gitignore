@@ -1,4 +1,5 @@
 .deploy_git/*
+.deploy_git
 node_modules/
 public/*
 public/archives/2018/index.html
