@@ -69,7 +69,15 @@ Spark 提供了Broadcast功能可以将小的数据集同步到多个节点上�
 
 * BlockTransferService：ShuffleClient底层的面向网络RPC的数据传输服务。
 
+<<<<<<< Updated upstream
 
+=======
+BlockInfo：Block的元数据信息，存储Level(StorageLevel)。
+
+BlockInfoManager：读写共享锁
+
+StorageLevel：定义了存储级别，内存还是磁盘，序列化还是非序列化，几个副本。
+>>>>>>> Stashed changes
 
 对这些类有个整体的认识，再去看源码应该会容易很多。
 
@@ -91,6 +99,17 @@ Spark 提供了Broadcast功能可以将小的数据集同步到多个节点上�
 
 
 
+<<<<<<< Updated upstream
+=======
+{% asset_img spark-storage-system.png %}
+
+
+
+{% asset_img spark-store.png %}
+
+
+
+>>>>>>> Stashed changes
 参考资料：
 
  [Spark存储体系](https://www.cnblogs.com/cenglinjinran/p/8476199.html)
