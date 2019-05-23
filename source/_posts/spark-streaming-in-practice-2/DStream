@@ -1,0 +1,42 @@
+@startuml
+
+
+DStream <|-- InputDStream
+
+
+InputDStream <|-- DirectKafkaInputDStream
+
+InputDStream <|-- ReceiverInputDStream
+
+
+ReceiverInputDStream <|-- KafkaInputDStream
+
+abstract class DStream{
+	
+}
+
+abstract class InputDStream{
+	
+}
+
+class DirectKafkaInputDStream{
+    aa:Int
+	def start()
+}
+
+
+abstract class ReceiverInputDStream{
+	def getReceiver(): Receiver
+}
+
+
+class KafkaInputDStream{
+	def getReceiver(): Receiver
+}
+
+
+
+
+
+
+@enduml
