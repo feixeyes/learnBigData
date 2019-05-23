@@ -2,6 +2,7 @@
 title: SparkStreaming反压机制详解
 date: 2019-01-04 12:24:03
 tags: spark
+categories: 技术原理
 ---
 
 # 背景概念

@@ -2,7 +2,7 @@
 title: 初探Flink之编程模型
 date: 2019-05-13 10:03:53
 tags: flink
-
+categories: 技术原理
 ---
 
 我们从官网文档开始，一窥Flink初貌。(https://ci.apache.org/projects/flink/flink-docs-release-1.8/)

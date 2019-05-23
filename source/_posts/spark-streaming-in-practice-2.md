@@ -5,9 +5,12 @@ tags:
 	- spark
 	- streaming
 	- 实践
+categories: 技术实践
 ---
 
 上篇文章我们一起研究了Kafka的特性，kafka Producer API 以及Spark写API的方案，本文我们继续研究Spark 读取Kafka的方案。ps: 读比较复杂所以放在后面研究。同样的我们从Kakfa 的Consumer API开始。
+
+<!-- more -->
 
 ## Kafka Consumer APIs
 

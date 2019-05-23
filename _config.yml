@@ -4,15 +4,15 @@
 
 # Site
 title: Silence Fly
-subtitle: 郭鹏飞的技术博客|其实我是一个程序员
-description: 
+subtitle: 坚持三年会有什么收获？干嘛不试试呢？反正都会老三岁。
+description: 明确目标 立足本位 恒常坚持 
 author: 郭鹏飞
 language: zh-CN
 timezone: 
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://feixeyes.github.io/
+url: https://blog.guopengfei.top
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -73,7 +73,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: BlueLake
+theme: next #BlueLake
 
 stylus:
   compress: true
