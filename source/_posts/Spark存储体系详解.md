@@ -2,14 +2,17 @@
 title: Spark存储体系详解
 date: 2019-05-15 10:08:16
 tags: spark
-
+categories: 技术原理
 ---
 
 ## 存储体系的职责
 
 在研究Spark存储体系之前，我们先搞清楚一个重要的问题：**对于一个数据计算引擎，存储体系在其中的职责是什么？或者说功能定位是什么？** 而子模块肯定是为整个系统服务的，所以我们可以从 计算引擎(Spark)本身功能来一探究竟。
 
+
 一个数据计算引擎，最主要的是对数据进行各种加工（转换、过滤、聚合、合并、统计等），我们可以将对数据的加工当成数据状态的转换。所以计算引擎的核心功能就是 定义**数据状态** 及定义**数据状态之上的各种操作**，对应于Spark即是，RDD 及之上的各种Transform和Action操作，所以Spark存储体系应该包括对RDD的存储。
+
+<!-- more -->
 
 输入是外部系统不算Spark本身的存储体系，Spark执行时会将整个作业按照数据依赖情况构建成DAG划分成多个Stage，Stage间涉及到数据的生成和传输(Shuffle阶段) 此处涉及到存储体系，涉及到的功能有数据存储、数据寻址，数据读取和数据远程传输。
 
@@ -69,15 +72,6 @@ Spark 提供了Broadcast功能可以将小的数据集同步到多个节点上�
 
 * BlockTransferService：ShuffleClient底层的面向网络RPC的数据传输服务。
 
-<<<<<<< Updated upstream
-
-=======
-BlockInfo：Block的元数据信息，存储Level(StorageLevel)。
-
-BlockInfoManager：读写共享锁
-
-StorageLevel：定义了存储级别，内存还是磁盘，序列化还是非序列化，几个副本。
->>>>>>> Stashed changes
 
 对这些类有个整体的认识，再去看源码应该会容易很多。
 
@@ -99,18 +93,7 @@ StorageLevel：定义了存储级别，内存还是磁盘，序列化还是非�
 
 
 
-<<<<<<< Updated upstream
-=======
-{% asset_img spark-storage-system.png %}
-
-
-
-{% asset_img spark-store.png %}
-
-
-
->>>>>>> Stashed changes
-参考资料：
+## 参考资料：
 
  [Spark存储体系](https://www.cnblogs.com/cenglinjinran/p/8476199.html)
 

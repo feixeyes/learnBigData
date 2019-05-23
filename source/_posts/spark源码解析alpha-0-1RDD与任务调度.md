@@ -17,6 +17,8 @@ Spark源码：https://github.com/apache/spark.git
 
 Spark最核心的概念是RDD（分布式弹性数据集）数据模型，在alpha-0.1版本中实现了RDD数据模型及在其上的任务调度系统，另外还实现了Broadcast和Accumulator工具以及SparkContext接口和spark-shell接口，下面对其分别做介绍。
 
+<!-- more -->
+
 # RDD与任务调度
 
 ​	百度百科对RDD介绍如下：*RDD(Resilient Distributed Datasets)，弹性分布式数据集，是分布式内存的一个抽象概念。RDD提供了一种高度受限的共享内存模型，即RDD是只读的记录分区的集合，只能通过在其他RDD执行确定的转换操作（如map、join和group by）而创建，然而这些限制使得实现容错的开销很低。​*

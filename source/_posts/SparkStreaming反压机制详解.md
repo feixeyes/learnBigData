@@ -11,6 +11,8 @@ categories: 技术原理
 * Batch Duration：spark streaming的核心参数，设置流数据被分成多个batch的时间间隔，每个spark引擎处理的就是这个时间间隔内的数据。
 * InputDStream：InputDStream继承自DStream，是所有输入流的基类，代表从源接收到的原始数据流DStreams，每一个InputDStream关联到单个Receiver对象，从源数据接收数据并存储到spark内存，等待处理。
 
+<!-- more -->
+
 # 反压是什么
 反压可以限制每个batch接收到的消息量
 

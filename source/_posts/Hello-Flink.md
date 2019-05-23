@@ -9,6 +9,8 @@ categories: 技术原理
 
 在学习Flink时，我们以和spark的对比，作为很重要的一条线来贯穿始终，通过对比两者的异同，来进一步理解分布式计算中需要解决的问题，及其解决方案。
 
+<!-- more -->
+
 Flink官网对其定义如下：		
 
 Apache Flink is an open source platform for distributed stream and batch data processing.Flink’s core is a streaming dataflow engine that provides data distribution, communication, and fault tolerance for distributed computations over data streams. Flink builds batch processing on top of the streaming engine, overlaying native iteration support, managed memory, and program optimization.

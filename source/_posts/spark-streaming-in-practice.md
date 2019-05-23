@@ -10,6 +10,8 @@ categories: 技术实践
 
 记录Spark Streaming开发中的一些经验，有些是在当前理解下的个人总结，可能有失偏颇。无特别说明，下文中Spark 指Spark Streaming 应用。spark Streaming支持很多数据源，如file、socket但无疑Kakfa是其中最重要的streaming数据源，本文会对其重点研究研究。这一块基本思路是，首先看一下Kafka提供的基本的数据读写的API，然后再看一下Spark对相关API进一步封装提供了哪些功能。
 
+<!-- more -->
+
 ## Kafka 基本概念
 
 

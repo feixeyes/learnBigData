@@ -75,6 +75,13 @@ pagination_dir: page
 ## Themes: https://hexo.io/themes/
 theme: next #BlueLake
 
+symbols_count_time:
+  symbols: true
+  time: false
+  total_symbols: false
+  total_time: false
+  exclude_codeblock: false
+
 stylus:
   compress: true
 
