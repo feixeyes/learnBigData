@@ -27,7 +27,7 @@ widgets:
   - tag
   - archive
     #- weibo
-  - links
+    #- links
 
 # Toc
 toc:
