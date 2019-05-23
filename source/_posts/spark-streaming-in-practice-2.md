@@ -213,23 +213,49 @@ note that the 0.8 integration is compatible with later 0.9 and 0.10 brokers, but
 
 
 
-- Receiver DStream：
-- Direct DStream：
-- SSL / TLS Support：
-- Offset Commit Api：
-- Dynamic Topic Subscription：
+## Spark DStream 类体系
+
+从上表我们可以看到，对于kafka 0.8 版本，spark有两套读取API，**Direct DStream** 和 **Receiver DStream**。而对于kafka1.0 目前只支持 **Direct DStream**。我们先从DStream的类体系来看一下这两种方式的异同。
 
 
 
-![image-20190522151509565](/Users/admin/Library/Application Support/typora-user-images/image-20190522151509565.png)
+{% asset_img DStream.png %}
+
+* DStream：
+* InputDStream：
+* ReceiverInputDStream：
+* DirectKafkaInputDStream：
+* KafkaInputDStream：
 
 
 
-![image-20190522151116173](/Users/admin/Library/Application Support/typora-user-images/image-20190522151116173.png)
+## Spark 读Kafka 0.8
+
+从上表我们可以看到，对于kafka 0.8 版本，spark有两套读取API，**Direct DStream** 和 **Receiver DStream**。
+
+### Receiver DStream
 
 
 
-![image-20190522151230008](/Users/admin/Library/Application Support/typora-user-images/image-20190522151230008.png)
+在 KafkaReceiver 的 onStart() 函数中：
+
+{% asset_img image-20190523184803340.png %}
+
+### Direct DStream
+
+
+
+{% asset_img image-20190522151509565.png %}
+
+
+
+
+
+{% asset_img image-20190522151116173.png %}
+
+
+
+{% asset_img image-20190522151230008.png %}
 
 
 
@@ -239,11 +265,9 @@ note that the 0.8 integration is compatible with later 0.9 and 0.10 brokers, but
 
 
 
-![image-20190522151622748](/Users/admin/Library/Application Support/typora-user-images/image-20190522151622748.png)
+{% asset_img image-20190522151622748.png %}
 
 
-
-## Spark 读Kafka 0.8
 
 
 
@@ -251,21 +275,11 @@ note that the 0.8 integration is compatible with later 0.9 and 0.10 brokers, but
 
 
 
-- Spark 读kafka的两（？）种方式
-- DrictStream API
-- High Level API 
-- Spark 监控—— Spark Master UI
-- Spark 监控—— Lag监控
+##  参考文献
 
 
 
-
-
-
-
-
-
-- 0.8 Using the High Level Consumer](https://cwiki.apache.org/confluence/display/KAFKA/Consumer+Group+Example)
+- [0.8 Using the High Level Consumer](https://cwiki.apache.org/confluence/display/KAFKA/Consumer+Group+Example)
 - [kakfa0.8 官网文档](https://kafka.apache.org/08/documentation.html)
 - [0.8.0 SimpleConsumer Example](https://cwiki.apache.org/confluence/display/KAFKA/0.8.0+SimpleConsumer+Example)
 - [Spark Streaming + Kafka Integration Guide](https://spark.apache.org/docs/2.1.0/streaming-kafka-integration.html#spark-streaming-kafka-integration-guide)
