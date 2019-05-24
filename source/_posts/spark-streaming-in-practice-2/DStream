@@ -12,26 +12,41 @@ InputDStream <|-- ReceiverInputDStream
 ReceiverInputDStream <|-- KafkaInputDStream
 
 abstract class DStream{
-	
+	final def getOrCompute(time: Time): Option[RDD[T]] 
+
+	 def map()
+	 def flatMap()
 }
 
 abstract class InputDStream{
-	
+	val rateController
+
+	def start()
+
 }
 
-class DirectKafkaInputDStream{
-    aa:Int
+abstract class ReceiverInputDStream{
+    val rateController:ReceiverRateController
+
+	def getReceiver(): Receiver
+
 	def start()
 }
 
+class DirectKafkaInputDStream{
+    val rateController: DirectKafkaRateController
+    override def compute(validTime: Time): Option[KafkaRDD]
 
-abstract class ReceiverInputDStream{
-	def getReceiver(): Receiver
+    def start()
+
 }
 
 
 class KafkaInputDStream{
+
 	def getReceiver(): Receiver
+
+	def start()
 }
 
 

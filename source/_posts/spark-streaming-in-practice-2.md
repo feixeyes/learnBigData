@@ -221,11 +221,21 @@ note that the 0.8 integration is compatible with later 0.9 and 0.10 brokers, but
 
 {% asset_img DStream.png %}
 
-* DStream：
-* InputDStream：
-* ReceiverInputDStream：
-* DirectKafkaInputDStream：
-* KafkaInputDStream：
+
+
+{% asset_img image-20190522151509565.png %}
+
+
+
+{% asset_img image-20190522151622748.png %}
+
+
+
+* DStream：定义了在RDD之上的基础数据流模型。1）定义了和RDD上类似的一组Transform和Action算子，如map、flatMap等；2）定义接口  **def getOrCompute(time: Time): Option[RDD[T]]**  返回时间区间内的RDD。
+* InputDStream：只在driver 上启动一个服务或线程来生成RDDs，可以实现该接口。 
+* ReceiverInputDStream：需要在worker上启动receiver来接收数据，需要实现该接口。ps:需要实现def getReceiver(): Receiver接口。
+* DirectKafkaInputDStream：基于InputDStream 和 Simple(Low-level) kafka Consumer API 实现。
+* KafkaInputDStream：基于 ReceiverInputDStream 和 High-level kafka Consumer API 实现。
 
 
 
@@ -245,7 +255,7 @@ note that the 0.8 integration is compatible with later 0.9 and 0.10 brokers, but
 
 
 
-{% asset_img image-20190522151509565.png %}
+
 
 
 
@@ -259,13 +269,7 @@ note that the 0.8 integration is compatible with later 0.9 and 0.10 brokers, but
 
 
 
-修改了parition  重启
 
-
-
-
-
-{% asset_img image-20190522151622748.png %}
 
 
 
