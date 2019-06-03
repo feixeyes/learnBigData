@@ -76,7 +76,7 @@ pagination_dir: page
 theme: hexo-theme-next #BlueLake
 
 symbols_count_time:
-  symbols: true
+  symbols: false
   time: false
   total_symbols: false
   total_time: false
