@@ -5,3 +5,5 @@ public/*
 public/archives/2018/index.html
 .DS_Store
 db.json
+themes/hexo-theme-next/
+themes/next_bak/

@@ -73,7 +73,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: next #BlueLake
+theme: hexo-theme-next #BlueLake
 
 symbols_count_time:
   symbols: true
