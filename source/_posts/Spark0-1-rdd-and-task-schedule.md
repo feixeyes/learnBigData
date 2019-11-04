@@ -1,10 +1,10 @@
 ---
-title: Spark0.1-rdd-and-task-schedule
+title: Spark0.1源码学习之-编程模型和任务调度 
 tags:
   - spark
   - 源码
 date: 2019-11-04 17:59:00
-categories:
+categories: 技术原理
 ---
 
 ## 从大数据的Hello World说起
